@@ -7,10 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import matplotlib.animation as animation
 
-
-
-# the constructor syntax is:
-# OptionMenu(master, variable, *values)
+#global declarations
 ab=0
 p= []
 p1=[]
@@ -136,7 +133,7 @@ def drawgraph():
 
 
 
-    #global lb
+    #execute sql command and gets the whole tuple if matched name is matched
     mycursor.execute("""SELECT * FROM coefficientseirft WHERE  Chiller= %s""", comb.get())
     # calls fetchone until None is returned (no more rows)
     global p1
@@ -334,7 +331,7 @@ def addentry():
           i1=str(rm1.get())
           i2=str(rm2.get())
           while True:
-                  
+               # for error handling and validation 
                try:
                    i3 = float(rm3.get())
                    print i3
@@ -558,7 +555,7 @@ def addentry():
                    print("Oops!  That was not valid number. please enter ID")
                    tkMessageBox.showinfo(title="Error",message="Enter number for coe of xy in EIRFT")
                    break
-                           
+          #b= 22 when all the conditions are satisfied        
           if b==22:
 
                    conn = MySQLdb.connect("localhost","root","root123","iiit")
